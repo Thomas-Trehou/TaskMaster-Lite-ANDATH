@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - develop
+      - feature/pipeline #à retirer une fois le travail fini
   pull_request:
     branches:
       - main
