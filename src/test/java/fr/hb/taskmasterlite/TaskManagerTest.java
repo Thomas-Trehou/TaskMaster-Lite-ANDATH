@@ -6,8 +6,18 @@ import static org.junit.Assert.*;
 import java.lang.reflect.Field;
 import java.util.List;
 
+/**
+ * Unit tests for the {@link TaskManager} class.
+ */
 public class TaskManagerTest {
 
+    /**
+     * Tests the functionality of adding a task to the list.
+     * Verifies that the size of the list increases and that the added task is correct.
+     *
+     * @throws NoSuchFieldException   If the 'tasks' field is not found (for reflection).
+     * @throws IllegalAccessException If access to the 'tasks' field is denied (for reflection).
+     */
     @Test
     public void testAddTask() throws NoSuchFieldException, IllegalAccessException {
         TaskManager manager = new TaskManager();
@@ -21,6 +31,10 @@ public class TaskManagerTest {
         assertEquals("Faire les courses", tasks.get(0));
     }
 
+    /**
+     * Tests the functionality of retrieving all tasks.
+     * Adds multiple tasks and verifies that the returned list contains all tasks in the correct order.
+     */
     @Test
     public void testGetAllTasks() {
         TaskManager manager = new TaskManager();
