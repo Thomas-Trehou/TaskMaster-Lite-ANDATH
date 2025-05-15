@@ -71,3 +71,27 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  document-and-archive:
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install Doxygen and Graphviz
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y doxygen graphviz
+
+      - name: Check Doxygen version
+        run: doxygen --version
+
+      - name: Generate Doxygen documentation
+        run: doxygen Doxyfile
+
+      - name: Archive documentation
+        uses: actions/upload-artifact@v4
+        with:
+          name: taskmaster-lite-documentation
+          path: doc/html
