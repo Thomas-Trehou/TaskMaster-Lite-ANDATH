@@ -12,9 +12,11 @@ public class TaskManagerTest {
     public void testAddTask() throws NoSuchFieldException, IllegalAccessException {
         TaskManager manager = new TaskManager();
         manager.addTask("Faire les courses");
+
         Field tasksField = TaskManager.class.getDeclaredField("tasks");
         tasksField.setAccessible(true);
         List<String> tasks = (List<String>) tasksField.get(manager);
+
         assertEquals(1, tasks.size());
         assertEquals("Faire les courses", tasks.get(0));
     }
