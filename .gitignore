@@ -1,0 +1,54 @@
+# Fichiers compilés
+*.class
+
+# Fichiers de packages
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Dossier target de Maven (contient les builds)
+target/
+
+# Fichiers de configuration Maven
+.mvn/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+
+# Fichiers de log
+*.log
+log/
+logs/
+
+# Fichiers spécifiques à IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Fichiers spécifiques à Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# Fichiers spécifiques à VS Code
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers de sauvegarde
+*~
+*.bak
+*.swp
+*.swo
